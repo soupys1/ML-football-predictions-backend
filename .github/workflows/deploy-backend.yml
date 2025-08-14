@@ -35,3 +35,4 @@ jobs:
           AWS_DEFAULT_REGION: us-east-2
         run: |
           eb deploy football-predictor-prod --timeout 20
+
