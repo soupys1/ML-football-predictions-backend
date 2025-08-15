@@ -42,7 +42,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: us-east-2
         run: |
-          eb init football-predictor-backend --region us-east-2 --platform "Python 3.9 running on 64bit Amazon Linux 2"
+          eb init football-predictor-backend --region us-east-2 --platform "Python 3.9"
 
       - name: Deploy to Elastic Beanstalk
         env:
