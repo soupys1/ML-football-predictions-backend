@@ -39,6 +39,24 @@ def save_model_to_s3(model_path, bucket_name, file_key):
         except Exception as e:
             print(f"Failed to upload model to S3: {e}")
 
+@app.route('/', methods=['GET'])
+def root():
+    """Root endpoint"""
+    return jsonify({
+        'message': 'Football Predictor Backend API',
+        'service': 'football-predictor-backend',
+        'version': '1.0.0',
+        'endpoints': {
+            'health': '/api/health',
+            'leagues': '/api/football/leagues/summary',
+            'teams': '/api/football/teams/{league_id}',
+            'predict': '/api/football/game/predict-by-teams',
+            'train': '/api/football/game/train-with-teams-players',
+            'upload': '/api/football/data/upload',
+            'model_status': '/api/football/model/status'
+        }
+    })
+
 @app.route('/api/health', methods=['GET'])
 def health_check():
     """Health check endpoint"""
