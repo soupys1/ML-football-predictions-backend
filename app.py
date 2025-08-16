@@ -15,7 +15,7 @@ from ml.team_player_features import rank_mvp_candidates, rank_top_players_for_te
 from ml.csv_loader import read_csv_smart
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:5173", "http://127.0.0.1:5173"], supports_credentials=True)
+CORS(app, origins=["http://localhost:5173", "http://127.0.0.1:5173", "https://football-predictor-frontend.vercel.app", "https://football-predictor-frontend.netlify.app"], supports_credentials=True)
 
 # Initialize AWS S3 client
 s3_client = boto3.client('s3') if os.getenv('AWS_ACCESS_KEY_ID') else None
